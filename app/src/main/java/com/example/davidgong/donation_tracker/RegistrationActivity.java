@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class RegistrationActivity extends AppCompatActivity {
     private AutoCompleteTextView username;
@@ -42,7 +43,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(usernametxt)) {
                     username.setError(getString(R.string.error_field_required));
                     valid = false;
-                } else if (model.containsUsername(usernametxt)) {
+                } else if (model.usedUsername(usernametxt)) {
                     username.setError(getString(R.string.error_username_taken));
                     valid = false;
                 } else if (!model.validUsername(usernametxt)) {
@@ -67,9 +68,12 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
                 //add new user and move to login activity if no errors occurred
                 if (valid) {
-                    model.addAccount(usernametxt, passwordtxt);
-                    Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
-                    startActivity(intent);
+                    if (model.addAccount(usernametxt, passwordtxt)) {
+                        Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(RegistrationActivity.this, "Error making account", Toast.LENGTH_LONG);
+                    }
                 }
             }
         });

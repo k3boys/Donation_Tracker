@@ -62,29 +62,27 @@ public class HomeActivity extends AppCompatActivity {
 
     private void loadLocationData() {
         InputStream is = getResources().openRawResource(getResources().getIdentifier("location_data", "raw", getPackageName()));
-
-        List<Location> locations = new ArrayList<Location>();
-        String line;
-        boolean firstLine = true;
-
-        try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(is));
-
-            while((line = br.readLine()) != null) {
-                if (!firstLine) {
-                    String[] values = line.split(",");
-                    Location newLocation = new Location(values[1], values[8], Double.parseDouble(values[2]), Double.parseDouble(values[3]),
-                            values[4], values[5], values[6], values[7], values[9]);
-                    locations.add(newLocation);
-                } else {
-                    firstLine = false;
-                }
-            }
-        } catch (java.io.IOException ie) {
-
-        }
-
-        model.addLocations(locations);
-        Log.i("locations list size", Integer.toString(locations.size()));
+        model.readLocations(is);
+//        List<Location> locations = new ArrayList<Location>();
+//        String line;
+//        boolean firstLine = true;
+//        try {
+//            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+//            while((line = br.readLine()) != null) {
+//                if (!firstLine) {
+//                    String[] values = line.split(",");
+//                    Location newLocation = new Location(values[1], values[8], Double.parseDouble(values[2]), Double.parseDouble(values[3]),
+//                            values[4], values[5], values[6], values[7], values[9]);
+//                    locations.add(newLocation);
+//                } else {
+//                    firstLine = false;
+//                }
+//            }
+//        } catch (java.io.IOException ie) {
+//
+//        }
+//
+//        model.addLocations(locations);
+        Log.i("locations list size", Integer.toString(model.numberOfLocations()));
     }
 }

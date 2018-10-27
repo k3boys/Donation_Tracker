@@ -201,8 +201,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             Toast.makeText(this, "Login credentials have been verified.", Toast.LENGTH_SHORT).show();
             mAuthTask.execute((Void) null);
             //navigate to next activity which is user's home page (later on add user details here)
-             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-             startActivity(intent);
+            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+            startActivity(intent);
         }
     }
 

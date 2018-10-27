@@ -3,10 +3,11 @@ package com.example.davidgong.donation_tracker;
 import java.io.Serializable;
 
 public class Location implements Serializable {
-    private String locationName, locationType, streetAddress, city, state, zip, phoneNumber;
+    private LocationType locationType;
+    private String locationName, streetAddress, city, state, zip, phoneNumber;
     private double latitude, longitude;
 
-    public Location(String locationName, String locationType, double latitude, double longitude,
+    public Location(String locationName, LocationType locationType, double latitude, double longitude,
                     String streetAddress, String city, String state, String zip, String phoneNumber) {
         this.locationName = locationName;
         this.locationType = locationType;
@@ -24,11 +25,11 @@ public class Location implements Serializable {
         return locationName + "\n" + locationType + "\n" + phoneNumber;
     }
 
-    public String getLocationName() {
+    public String getName() {
         return locationName;
     }
 
-    public String getLocationType() {
+    public LocationType getType() {
         return locationType;
     }
 
@@ -61,11 +62,11 @@ public class Location implements Serializable {
     }
 
 
-    public void setLocationName(String locationName) {
+    public void setName(String locationName) {
         this.locationName = locationName;
     }
 
-    public void setLocationType(String locationType) {
+    public void setType(LocationType locationType) {
         this.locationType = locationType;
     }
 

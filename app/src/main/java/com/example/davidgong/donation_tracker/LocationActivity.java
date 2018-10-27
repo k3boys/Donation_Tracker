@@ -28,10 +28,6 @@ public class LocationActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(LocationActivity.this, LocationDetailActivity.class);
-
-                Location selectedLocation = model.getLocations().get(position);
-                intent.putExtra("Location", selectedLocation);
-
                 startActivity(intent);
             }
         });
