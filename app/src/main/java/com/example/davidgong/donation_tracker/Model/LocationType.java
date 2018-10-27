@@ -1,4 +1,4 @@
-package com.example.davidgong.donation_tracker;
+package com.example.davidgong.donation_tracker.Model;
 
 public enum LocationType {
     DROP_OFF("Drop-off"),

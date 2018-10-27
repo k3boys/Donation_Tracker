@@ -1,4 +1,4 @@
-package com.example.davidgong.donation_tracker;
+package com.example.davidgong.donation_tracker.Model;
 
 import java.io.InputStream;
 import java.util.HashMap;
@@ -10,7 +10,6 @@ public class Model {
     private LocationManager locationManager;
     private AccountManager accountManager;
     private HashMap<String, Account> accounts;
-    private List<Location> locations;
 
     private Model() {
         accounts = new HashMap<>();

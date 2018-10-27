@@ -1,4 +1,4 @@
-package com.example.davidgong.donation_tracker;
+package com.example.davidgong.donation_tracker.Controller;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.example.davidgong.donation_tracker.Model.Location;
+import com.example.davidgong.donation_tracker.Model.Model;
+import com.example.davidgong.donation_tracker.R;
 
 public class LocationActivity extends Activity {
 
@@ -27,6 +31,7 @@ public class LocationActivity extends Activity {
         locationList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                model.setActiveLocation(position);
                 Intent intent = new Intent(LocationActivity.this, LocationDetailActivity.class);
                 startActivity(intent);
             }

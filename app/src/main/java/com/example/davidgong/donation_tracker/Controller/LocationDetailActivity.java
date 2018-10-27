@@ -1,8 +1,11 @@
-package com.example.davidgong.donation_tracker;
+package com.example.davidgong.donation_tracker.Controller;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.widget.TextView;
+
+import com.example.davidgong.donation_tracker.Model.Model;
+import com.example.davidgong.donation_tracker.R;
 
 public class LocationDetailActivity extends Activity {
 

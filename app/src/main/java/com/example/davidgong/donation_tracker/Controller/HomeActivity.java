@@ -1,4 +1,4 @@
-package com.example.davidgong.donation_tracker;
+package com.example.davidgong.donation_tracker.Controller;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,11 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
+import com.example.davidgong.donation_tracker.Model.Model;
+import com.example.davidgong.donation_tracker.R;
+
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.davidgong.donation_tracker;
+package com.example.davidgong.donation_tracker.Model;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -38,7 +38,7 @@ public class LocationManager {
                 String[] values = line.split(",");
                 Location newLocation = new Location(
                         values[NAME_TOKEN],
-                        LocationType.valueOf(values[TYPE_TOKEN].replaceAll("\\S", "_").toUpperCase()),
+                        LocationType.valueOf(values[TYPE_TOKEN].replaceAll("\\s", "_").toUpperCase()),
                         Double.parseDouble(values[LATITUDE_TOKEN]),
                         Double.parseDouble(values[LONGITUDE_TOKEN]),
                         values[STREET_TOKEN],

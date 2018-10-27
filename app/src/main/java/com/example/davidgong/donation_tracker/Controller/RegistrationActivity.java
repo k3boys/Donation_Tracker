@@ -1,4 +1,4 @@
-package com.example.davidgong.donation_tracker;
+package com.example.davidgong.donation_tracker.Controller;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,9 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.davidgong.donation_tracker.Model.Model;
+import com.example.davidgong.donation_tracker.R;
 
 public class RegistrationActivity extends AppCompatActivity {
     private AutoCompleteTextView username;
@@ -69,6 +72,9 @@ public class RegistrationActivity extends AppCompatActivity {
                 //add new user and move to login activity if no errors occurred
                 if (valid) {
                     if (model.addAccount(usernametxt, passwordtxt)) {
+                        username.setText("");
+                        password.setText("");
+                        confirmPassword.setText("");
                         Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
                         startActivity(intent);
                     } else {
